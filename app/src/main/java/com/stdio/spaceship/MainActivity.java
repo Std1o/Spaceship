@@ -2,15 +2,18 @@ package com.stdio.spaceship;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.VideoView;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme_FullScreen);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         VideoView videoview = findViewById(R.id.videoView);
@@ -24,5 +27,13 @@ public class MainActivity extends AppCompatActivity {
                 mp.setVolume(0,0);
             }
         });
+    }
+
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn1:
+                startActivity(new Intent(this, FirstActivity.class));
+                break;
+        }
     }
 }

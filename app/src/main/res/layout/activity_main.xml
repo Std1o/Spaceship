@@ -39,6 +39,7 @@
         android:layout_gravity="center">
 
         <Button
+            android:id="@+id/btn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -46,17 +47,20 @@
             android:foreground="?android:attr/selectableItemBackground"
             android:text="  Время полета от Земли до Марса  "
             android:textAllCaps="false"
+            android:onClick="onClick"
             android:textColor="@android:color/white" />
 
         <Button
+            android:id="@+id/btn2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
             android:background="@drawable/transparent_bg_bordered_button"
             android:foreground="?android:attr/selectableItemBackground"
             android:text="     Землеподобные экзопланеты     "
             android:textAllCaps="false"
+            android:onClick="onClick"
             android:textColor="@android:color/white" />
     </LinearLayout>
 
