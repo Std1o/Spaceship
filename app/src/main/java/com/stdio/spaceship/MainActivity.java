@@ -16,6 +16,10 @@ public class MainActivity extends AppCompatActivity {
         setTheme(R.style.AppTheme_FullScreen);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public void onResume() {
         VideoView videoview = findViewById(R.id.videoView);
         Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.space_video);
         videoview.setVideoURI(uri);
@@ -27,12 +31,16 @@ public class MainActivity extends AppCompatActivity {
                 mp.setVolume(0,0);
             }
         });
+        super.onResume();
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn1:
                 startActivity(new Intent(this, FirstActivity.class));
+                break;
+            case R.id.btn2:
+                startActivity(new Intent(this, SecondActivity.class));
                 break;
         }
     }
